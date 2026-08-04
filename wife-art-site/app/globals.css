@@ -276,6 +276,7 @@ a {
   background: var(--paper);
   border: 1px solid var(--line);
   margin-bottom: 24px;
+overflow: hidden;
 }
 .landing-tagline {
   margin-top: 10px;

@@ -20,6 +20,7 @@ export const artist = {
   name: "Zi Moreira",
   bio: "Zi Moreira (Zizelda Moreira) is an abstract artist originally from Brazil, now based in the U.S. Her work is known for vibrant colors and dynamic compositions, created in acrylic, oil, and mixed media.",
   email: "zimoreira@ymail.com",
+photo: "/artist-portrait.jpeg",
   instagram: "https://www.instagram.com/zimoreira_art/",
   facebook: "https://www.facebook.com/zi.moreira.3",
   youtube: "https://www.youtube.com/channel/UCyeN4rWnwXXqtTNorlYTzjQ",

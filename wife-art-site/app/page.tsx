@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { artist } from "@/lib/artworks";
 
@@ -5,7 +6,16 @@ export default function Home() {
   return (
     <main>
       <section className="landing wrap">
-        <div className="landing-portrait" aria-hidden="true" />
+        <div className="landing-portrait">
+          <Image
+            src={artist.photo}
+            alt={artist.name}
+            width={200}
+            height={200}
+            style={{ width: "100%", height: "100%", objectFit: "cover" }}
+            priority
+          />
+        </div>
         <div className="hero-eyebrow">Abstract Art</div>
         <h1>{artist.name}</h1>
         <p className="landing-tagline">Creator of abstract art</p>
