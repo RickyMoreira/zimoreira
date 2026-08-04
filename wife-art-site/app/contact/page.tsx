@@ -17,7 +17,7 @@ export default function Contact() {
           <li>
             <span>Instagram</span>
             <a href={artist.instagram} target="_blank" rel="noopener noreferrer">
-              @handle
+            @zimoreira_art
             </a>
           </li>
         </ul>
