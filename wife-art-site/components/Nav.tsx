@@ -1,17 +1,17 @@
 import Link from "next/link";
-import { artista } from "@/lib/artworks";
+import { artist } from "@/lib/artworks";
 
 export default function Nav() {
   return (
     <header className="nav">
       <div className="wrap nav-inner">
         <Link href="/" className="nav-brand">
-          {artista.nome}
+          {artist.name}
         </Link>
         <ul className="nav-links">
-          <li><Link href="/">Galeria</Link></li>
-          <li><Link href="/sobre">Sobre</Link></li>
-          <li><Link href="/contato">Contato</Link></li>
+          <li><Link href="/">Gallery</Link></li>
+          <li><Link href="/about">About</Link></li>
+          <li><Link href="/contact">Contact</Link></li>
         </ul>
       </div>
     </header>

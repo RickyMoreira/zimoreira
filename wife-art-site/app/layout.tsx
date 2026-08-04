@@ -3,7 +3,7 @@ import { Fraunces, Work_Sans, IBM_Plex_Mono } from "next/font/google";
 import "./globals.css";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
-import { artista } from "@/lib/artworks";
+import { artist } from "@/lib/artworks";
 
 const display = Fraunces({
   subsets: ["latin"],
@@ -25,8 +25,8 @@ const mono = IBM_Plex_Mono({
 });
 
 export const metadata: Metadata = {
-  title: `${artista.nome} — Pinturas`,
-  description: artista.bio,
+  title: `${artist.name} — Paintings`,
+  description: artist.bio,
 };
 
 export default function RootLayout({
@@ -35,7 +35,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="pt-BR" className={`${display.variable} ${body.variable} ${mono.variable}`}>
+    <html lang="en" className={`${display.variable} ${body.variable} ${mono.variable}`}>
       <body>
         <Nav />
         {children}

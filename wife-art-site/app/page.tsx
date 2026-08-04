@@ -1,18 +1,18 @@
 import WorkCard from "@/components/WorkCard";
-import { artista, obras } from "@/lib/artworks";
+import { artist, artworks } from "@/lib/artworks";
 
 export default function Home() {
   return (
     <main>
       <section className="hero wrap">
-        <div className="hero-eyebrow">Pinturas</div>
-        <h1>{artista.nome}</h1>
-        <p>{artista.bio}</p>
+        <div className="hero-eyebrow">Paintings</div>
+        <h1>{artist.name}</h1>
+        <p>{artist.bio}</p>
       </section>
 
       <section className="galeria">
-        {obras.map((obra) => (
-          <WorkCard key={obra.slug} obra={obra} />
+        {artworks.map((artwork) => (
+          <WorkCard key={artwork.slug} artwork={artwork} />
         ))}
       </section>
     </main>

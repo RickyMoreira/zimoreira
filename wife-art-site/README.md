@@ -1,86 +1,93 @@
-# Site de pinturas — Next.js + Vercel
+# Painting portfolio site — Next.js + Vercel
 
-Site simples de portfólio (galeria + sobre + contato), pronto para publicar
-na Vercel, feito para substituir o site atual no Wix.
+Simple portfolio site (gallery + about + contact), ready to publish on
+Vercel, built to replace the current Wix site.
 
-## Estrutura
+## Structure
 
-- `lib/artworks.ts` — **único arquivo que você precisa editar** para trocar
-  nome da artista, bio, e-mail, Instagram e as obras (título, ano, técnica,
-  dimensões, disponibilidade).
-- `public/obras/` — coloque as fotos das pinturas aqui (mesmo nome de
-  arquivo referenciado em `lib/artworks.ts`).
-- `app/` — as 3 páginas do site (galeria, sobre, contato). Normalmente não
-  precisa mexer aqui.
+- `lib/artworks.ts` — **the only file you need to edit** to change the
+  artist's name, bio, email, Instagram, and the list of paintings (title,
+  year, medium, dimensions, availability).
+- `public/artworks/` — put the painting photos here (same filename
+  referenced in `lib/artworks.ts`, e.g. `bare-layers.jpg`).
+- `app/` — the site's pages (gallery, about, contact). You normally won't
+  need to touch this.
 
-## 1. Rodar localmente (opcional, para conferir antes de publicar)
+The 37 paintings from the current gallery folder are already listed in
+`lib/artworks.ts` with their titles and dimensions (all set to "Acrylic on
+canvas"). What's still missing for each one:
+- The actual photo file in `public/artworks/` — filenames are already
+  matched to each painting (see the `image` field in `lib/artworks.ts`).
+- `year` is left blank ("") — fill it in per painting if you have it.
 
-Requer [Node.js](https://nodejs.org) instalado.
+## 1. Run locally (optional, to check before publishing)
+
+Requires [Node.js](https://nodejs.org).
 
 ```bash
 npm install
 npm run dev
 ```
 
-Abra http://localhost:3000
+Open http://localhost:3000
 
-## 2. Publicar no GitHub
+## 2. Publish to GitHub
 
-1. Crie um repositório novo (pode ser privado) no GitHub.
-2. Dentro desta pasta:
+1. Create a new repository (can be private) on GitHub.
+2. Inside this folder:
 
 ```bash
 git init
 git add .
-git commit -m "site inicial"
+git commit -m "initial site"
 git branch -M main
-git remote add origin https://github.com/SEU-USUARIO/SEU-REPO.git
+git remote add origin https://github.com/YOUR-USERNAME/YOUR-REPO.git
 git push -u origin main
 ```
 
-## 3. Publicar na Vercel
+## 3. Deploy on Vercel
 
-1. Crie uma conta em https://vercel.com (dá para entrar com a conta do GitHub).
-2. Clique em **Add New → Project**.
-3. Selecione o repositório que você acabou de criar.
-4. A Vercel detecta o Next.js automaticamente — não precisa mudar nenhuma
-   configuração. Clique em **Deploy**.
-5. Em alguns minutos o site estará no ar num endereço tipo
-   `seu-projeto.vercel.app`.
+1. Create an account at https://vercel.com (you can sign in with GitHub).
+2. Click **Add New → Project**.
+3. Select the repository you just created.
+4. Vercel detects Next.js automatically — no config changes needed. Click
+   **Deploy**.
+5. In a few minutes the site will be live at something like
+   `your-project.vercel.app`.
 
-## 4. Migrar o domínio do Wix para a Vercel
+## 4. Move the domain from Wix to Vercel
 
-Se vocês já têm um domínio próprio (ex: `nomedaartista.com`) sendo usado no
-Wix, o site troca de "casa" sem precisar comprar o domínio de novo:
+If you already have your own domain (e.g. `artistname.com`) pointed at
+Wix, the site can move without buying the domain again:
 
-1. No painel da Vercel, abra o projeto → **Settings → Domains** → adicione
-   `nomedaartista.com` (e/ou `www.nomedaartista.com`).
-2. A Vercel vai mostrar registros DNS para configurar (geralmente um
-   registro `A` apontando para `76.76.21.21` e/ou um `CNAME` para
-   `cname.vercel-dns.com` no `www`).
-3. Onde o domínio foi comprado (isso pode ser no próprio Wix, ou em outro
-   lugar como GoDaddy/Registro.br — confira em Wix em **Configurações →
-   Domínios** quem é o "registrar"):
-   - Se o domínio foi comprado **na Wix**: em Wix, vá em Domínios →
-     selecione o domínio → **Configurações avançadas de DNS** e adicione os
-     registros que a Vercel pediu (não precisa transferir o domínio para
-     fora da Wix, só apontar o DNS).
-   - Se o domínio foi comprado **em outro registrador**: entre no painel
-     desse registrador e adicione os mesmos registros lá.
-4. Espere a propagação do DNS (de alguns minutos até ~24h). A Vercel emite
-   HTTPS automaticamente assim que o DNS estiver correto.
-5. Só depois de confirmar que o novo site está funcionando no domínio, você
-   pode cancelar o plano pago do Wix (se houver).
+1. In the Vercel dashboard, open the project → **Settings → Domains** →
+   add `artistname.com` (and/or `www.artistname.com`).
+2. Vercel will show DNS records to set up (usually an `A` record pointing
+   to `76.76.21.21` and/or a `CNAME` for `www` pointing to
+   `cname.vercel-dns.com`).
+3. Wherever the domain was purchased (this could be inside Wix itself, or
+   somewhere else like GoDaddy — check in Wix under **Settings →
+   Domains** to see who the "registrar" is):
+   - If the domain was bought **through Wix**: in Wix, go to Domains →
+     select the domain → **Advanced DNS settings** and add the records
+     Vercel asked for (no need to move the domain out of Wix, just point
+     the DNS).
+   - If the domain was bought **elsewhere**: log into that registrar's
+     dashboard and add the same records there.
+4. Wait for DNS to propagate (a few minutes up to ~24h). Vercel issues
+   HTTPS automatically once the DNS is correct.
+5. Only cancel the paid Wix plan (if any) after confirming the new site
+   works on the domain.
 
-## 5. Trocar fotos e textos depois de publicado
+## 5. Update photos and text after publishing
 
-Sempre que editar `lib/artworks.ts` ou adicionar fotos em `public/obras/`,
-basta:
+Any time you edit `lib/artworks.ts` or add photos to `public/artworks/`,
+just run:
 
 ```bash
 git add .
-git commit -m "atualiza obras"
+git commit -m "update artworks"
 git push
 ```
 
-A Vercel publica a nova versão automaticamente em ~1 minuto.
+Vercel deploys the new version automatically in about a minute.
