@@ -1,0 +1,46 @@
+import type { Metadata } from "next";
+import { Fraunces, Work_Sans, IBM_Plex_Mono } from "next/font/google";
+import "./globals.css";
+import Nav from "@/components/Nav";
+import Footer from "@/components/Footer";
+import { artista } from "@/lib/artworks";
+
+const display = Fraunces({
+  subsets: ["latin"],
+  variable: "--font-display",
+  weight: ["400", "500", "600"],
+  style: ["normal", "italic"],
+});
+
+const body = Work_Sans({
+  subsets: ["latin"],
+  variable: "--font-body",
+  weight: ["400", "500"],
+});
+
+const mono = IBM_Plex_Mono({
+  subsets: ["latin"],
+  variable: "--font-mono",
+  weight: ["400", "500"],
+});
+
+export const metadata: Metadata = {
+  title: `${artista.nome} — Pinturas`,
+  description: artista.bio,
+};
+
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
+  return (
+    <html lang="pt-BR" className={`${display.variable} ${body.variable} ${mono.variable}`}>
+      <body>
+        <Nav />
+        {children}
+        <Footer />
+      </body>
+    </html>
+  );
+}

@@ -1,0 +1,265 @@
+:root {
+  --bg: #f7f5f0;       /* parede de galeria, tela crua */
+  --ink: #1e1b16;      /* quase-preto quente */
+  --stone: #8c8577;    /* cinza pedra, textos secundários */
+  --line: #ddd8cd;     /* linhas / bordas sutis */
+  --paper: #ffffff;    /* cartões e placas */
+  --accent: #8b2e2e;   /* óxido de ferro — pigmento, não decoração */
+  --accent-ink: #f7f5f0;
+  --radius: 2px;
+  --max-w: 1160px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-body), -apple-system, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3 {
+  font-family: var(--font-display), Georgia, serif;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  margin: 0;
+}
+
+a {
+  color: inherit;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.001ms !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
+.wrap {
+  max-width: var(--max-w);
+  margin: 0 auto;
+  padding: 0 28px;
+}
+
+/* ---------- Nav ---------- */
+.nav {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  background: color-mix(in srgb, var(--bg) 88%, transparent);
+  backdrop-filter: blur(6px);
+  border-bottom: 1px solid var(--line);
+}
+.nav-inner {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  padding: 20px 0;
+}
+.nav-brand {
+  font-family: var(--font-display), serif;
+  font-size: 1.15rem;
+  text-decoration: none;
+}
+.nav-links {
+  display: flex;
+  gap: 28px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-mono), monospace;
+  font-size: 0.78rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+.nav-links a {
+  text-decoration: none;
+  padding-bottom: 3px;
+  border-bottom: 1px solid transparent;
+}
+.nav-links a:hover {
+  border-bottom-color: var(--accent);
+}
+
+/* ---------- Hero ---------- */
+.hero {
+  padding: 88px 0 56px;
+}
+.hero-eyebrow {
+  font-family: var(--font-mono), monospace;
+  font-size: 0.75rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 18px;
+}
+.hero h1 {
+  font-size: clamp(2.4rem, 5vw, 4.2rem);
+  line-height: 1.04;
+  max-width: 14ch;
+}
+.hero p {
+  margin-top: 22px;
+  max-width: 46ch;
+  color: var(--stone);
+  font-size: 1.05rem;
+  line-height: 1.6;
+}
+
+/* ---------- Galeria (grid + placas de museu) ---------- */
+.galeria {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1px;
+  background: var(--line);
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+.obra {
+  background: var(--bg);
+  padding: 40px 28px 28px;
+  display: flex;
+  flex-direction: column;
+}
+.obra.destaque {
+  grid-column: 1 / -1;
+}
+.obra-frame {
+  background: var(--paper);
+  border: 1px solid var(--line);
+  padding: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  aspect-ratio: 4 / 5;
+  overflow: hidden;
+}
+.obra.destaque .obra-frame {
+  aspect-ratio: 16 / 9;
+}
+.obra-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.obra-frame.vazio {
+  color: var(--stone);
+  font-family: var(--font-mono), monospace;
+  font-size: 0.72rem;
+  text-align: center;
+  letter-spacing: 0.04em;
+  padding: 24px;
+}
+
+/* placa estilo museu */
+.placa {
+  margin-top: 16px;
+  padding-top: 14px;
+  border-top: 1px solid var(--line);
+  font-family: var(--font-mono), monospace;
+}
+.placa-titulo {
+  font-family: var(--font-display), serif;
+  font-size: 1.05rem;
+  font-style: italic;
+  margin-bottom: 6px;
+}
+.placa-meta {
+  font-size: 0.72rem;
+  color: var(--stone);
+  letter-spacing: 0.03em;
+  line-height: 1.7;
+}
+.placa-status {
+  display: inline-block;
+  margin-top: 8px;
+  font-size: 0.68rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 3px 8px;
+  border: 1px solid var(--line);
+}
+.placa-status.disponivel {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+@media (max-width: 720px) {
+  .galeria {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ---------- Páginas internas (Sobre / Contato) ---------- */
+.pagina {
+  padding: 72px 0 100px;
+  max-width: 62ch;
+}
+.pagina h1 {
+  font-size: clamp(2rem, 4vw, 2.8rem);
+  margin-bottom: 28px;
+}
+.pagina p {
+  color: var(--ink);
+  line-height: 1.75;
+  font-size: 1.05rem;
+  margin-bottom: 18px;
+}
+.retrato {
+  width: 100%;
+  max-width: 320px;
+  aspect-ratio: 4/5;
+  background: var(--paper);
+  border: 1px solid var(--line);
+  margin-bottom: 32px;
+}
+
+.contato-lista {
+  list-style: none;
+  padding: 0;
+  margin: 32px 0 0;
+  font-family: var(--font-mono), monospace;
+}
+.contato-lista li {
+  padding: 16px 0;
+  border-top: 1px solid var(--line);
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.85rem;
+}
+.contato-lista li:last-child {
+  border-bottom: 1px solid var(--line);
+}
+.contato-lista a {
+  text-decoration: none;
+  color: var(--accent);
+}
+
+/* ---------- Footer ---------- */
+.footer {
+  border-top: 1px solid var(--line);
+  padding: 28px 0 40px;
+  font-family: var(--font-mono), monospace;
+  font-size: 0.72rem;
+  color: var(--stone);
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 8px;
+}
