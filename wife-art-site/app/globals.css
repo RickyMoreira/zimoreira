@@ -263,3 +263,99 @@ a {
   flex-wrap: wrap;
   gap: 8px;
 }
+
+/* ---------- Landing (home) ---------- */
+.landing {
+  padding: 88px 0 64px;
+  max-width: 640px;
+}
+.landing-portrait {
+  width: 96px;
+  height: 96px;
+  border-radius: 50%;
+  background: var(--paper);
+  border: 1px solid var(--line);
+  margin-bottom: 24px;
+}
+.landing-tagline {
+  margin-top: 10px;
+  font-family: var(--font-mono), monospace;
+  font-size: 0.85rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--stone);
+}
+.landing-statement {
+  margin-top: 28px;
+  font-size: 1.1rem;
+  line-height: 1.75;
+  color: var(--ink);
+  max-width: 56ch;
+}
+.landing-links {
+  display: flex;
+  gap: 16px;
+  margin-top: 36px;
+  flex-wrap: wrap;
+}
+.landing-link {
+  display: inline-block;
+  text-decoration: none;
+  padding: 12px 22px;
+  border: 1px solid var(--ink);
+  font-family: var(--font-mono), monospace;
+  font-size: 0.78rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--ink);
+}
+.landing-link-primary {
+  background: var(--ink);
+  color: var(--bg);
+}
+.landing-link:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+.landing-link-primary:hover {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: var(--accent-ink);
+}
+
+/* ---------- Get in touch band ---------- */
+.touch {
+  border-top: 1px solid var(--line);
+  padding: 56px 0 80px;
+}
+.touch-title {
+  font-size: 1.6rem;
+  margin-bottom: 18px;
+}
+.touch-email {
+  display: inline-block;
+  font-family: var(--font-mono), monospace;
+  font-size: 0.95rem;
+  color: var(--accent);
+  text-decoration: none;
+  margin-bottom: 20px;
+}
+.social-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  gap: 24px;
+  font-family: var(--font-mono), monospace;
+  font-size: 0.78rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+.social-list a {
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+}
+.social-list a:hover {
+  border-bottom-color: var(--accent);
+  color: var(--accent);
+}

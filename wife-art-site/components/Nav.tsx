@@ -9,7 +9,7 @@ export default function Nav() {
           {artist.name}
         </Link>
         <ul className="nav-links">
-          <li><Link href="/">Gallery</Link></li>
+          <li><Link href="/gallery">Gallery</Link></li>
           <li><Link href="/about">About</Link></li>
           <li><Link href="/contact">Contact</Link></li>
         </ul>
