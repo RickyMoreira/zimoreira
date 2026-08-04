@@ -5,12 +5,24 @@
 // 3. Save — the site updates automatically
 // ============================================================
 
+export type Artwork = {
+  slug: string;          // used for the image filename, no spaces/accents
+  title: string;
+  year?: string;         // leave blank ("") until you have it
+  medium: string;
+  dimensions: string;
+  image: string;         // path in /public
+  featured?: boolean;    // true = shows larger on the home page
+  available?: boolean;   // true = "Available", false = "Sold"
+};
+
 export const artist = {
   name: "Zi Moreira",
   bio: "Zi Moreira (Zizelda Moreira) is an abstract artist originally from Brazil, now based in the U.S. Her work is known for vibrant colors and dynamic compositions, created in acrylic, oil, and mixed media.",
   email: "zimoreira@ymail.com",
   instagram: "https://instagram.com/",
 };
+
 const MEDIUM = "Acrylic on canvas";
 
 export const artworks: Artwork[] = [
