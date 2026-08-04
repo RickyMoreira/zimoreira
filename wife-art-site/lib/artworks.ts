@@ -17,7 +17,7 @@ export type Artwork = {
 };
 
 export const artist = {
-  name: "Artist Name",
+  name: "Zi Moreira",
   bio: "Write 2–4 sentences here about who the artist is, where she's from, and what drives her work. This text appears on the About page.",
   email: "contact@example.com",
   instagram: "https://instagram.com/",
