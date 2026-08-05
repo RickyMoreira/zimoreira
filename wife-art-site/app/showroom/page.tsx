@@ -1,3 +1,4 @@
+import ShowroomGrid from "@/components/ShowroomGrid";
 import { showroomItems } from "@/lib/showroom";
 
 export default function ShowRoom() {
@@ -14,25 +15,7 @@ export default function ShowRoom() {
           <p style={{ color: "var(--stone)" }}>More coming soon.</p>
         </section>
       ) : (
-        <section className="showroom-grid wrap">
-          {showroomItems.map((item) => (
-            <div key={item.slug} className="showroom-item">
-              {item.type === "video" ? (
-                <video
-                  src={item.file}
-                  autoPlay
-                  loop
-                  muted
-                  playsInline
-                  className="showroom-media"
-                />
-              ) : (
-                <img src={item.file} alt={item.caption ?? item.slug} className="showroom-media" />
-              )}
-              {item.caption && <div className="showroom-caption">{item.caption}</div>}
-            </div>
-          ))}
-        </section>
+        <ShowroomGrid items={showroomItems} />
       )}
     </main>
   );
