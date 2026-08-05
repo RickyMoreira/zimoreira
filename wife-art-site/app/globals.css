@@ -360,7 +360,8 @@ a {
   padding: 0;
   margin: 0;
   display: flex;
-  gap: 24px;
+  flex-wrap: wrap;
+  gap: 20px 24px;
   font-family: var(--font-mono), monospace;
   font-size: 0.78rem;
   letter-spacing: 0.05em;
@@ -456,6 +457,9 @@ a {
   color: var(--accent);
 }
 .lightbox-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
   background: none;
   border: none;
   color: var(--bg);
@@ -464,6 +468,12 @@ a {
   padding: 8px 18px;
   line-height: 1;
   flex-shrink: 0;
+}
+.lightbox-prev {
+  left: 8px;
+}
+.lightbox-next {
+  right: 8px;
 }
 .lightbox-nav:hover {
   color: var(--accent);
@@ -477,16 +487,26 @@ a {
     padding: 14px;
   }
   .lightbox-image-wrap {
-    max-width: 82vw;
-    max-height: 50vh;
+    max-width: 86vw;
+    max-height: 54vh;
   }
   .lightbox-image {
-    max-width: 82vw;
-    max-height: 50vh;
+    max-width: 86vw;
+    max-height: 54vh;
   }
   .lightbox-nav {
-    font-size: 2.2rem;
-    padding: 6px 10px;
+    font-size: 1.8rem;
+    padding: 6px 8px;
+  }
+  .lightbox-prev {
+    left: 0;
+  }
+  .lightbox-next {
+    right: 0;
+  }
+  .lightbox-close {
+    top: 12px;
+    right: 12px;
   }
 }
 
@@ -537,5 +557,65 @@ a {
 @media (max-width: 620px) {
   .showroom-item {
     width: 100%;
+  }
+}
+
+/* ---------- Mobile pass ---------- */
+@media (max-width: 640px) {
+  .wrap {
+    padding: 0 20px;
+  }
+
+  /* Nav: smaller brand, tighter link spacing, wraps if needed */
+  .nav-inner {
+    flex-wrap: wrap;
+    gap: 10px 0;
+    padding: 16px 0;
+  }
+  .nav-brand {
+    font-size: 1.02rem;
+  }
+  .nav-links {
+    gap: 16px;
+    font-size: 0.68rem;
+    width: 100%;
+    justify-content: flex-start;
+  }
+
+  /* Less top padding before content on small screens */
+  .hero {
+    padding: 48px 0 36px;
+  }
+  .landing {
+    padding: 48px 0 44px;
+  }
+  .landing-portrait {
+    width: 120px;
+    height: 120px;
+  }
+  .landing-statement {
+    font-size: 1rem;
+  }
+  .pagina {
+    padding: 48px 0 64px;
+  }
+  .touch {
+    padding: 40px 0 56px;
+  }
+
+  /* Resume / contact rows: stack label above value instead of squeezing side by side */
+  .contato-lista li {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+  }
+  .contato-lista li span {
+    max-width: 100% !important;
+    text-align: left !important;
+  }
+
+  .footer {
+    font-size: 0.68rem;
+    padding: 20px 0 32px;
   }
 }
