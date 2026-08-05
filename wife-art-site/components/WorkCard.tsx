@@ -1,10 +1,18 @@
 import Image from "next/image";
 import type { Artwork } from "@/lib/artworks";
 
+function getAspectRatio(dimensions: string): string {
+  const match = dimensions.match(/(\d+(?:\.\d+)?)\s*[×x]\s*(\d+(?:\.\d+)?)/);
+  if (!match) return "4 / 5";
+  return `${match[1]} / ${match[2]}`;
+}
+
 export default function WorkCard({ artwork }: { artwork: Artwork }) {
+  const ratio = getAspectRatio(artwork.dimensions);
+
   return (
     <article className="obra">
-      <div className="obra-frame">
+      <div className="obra-frame" style={{ aspectRatio: ratio }}>
         {/* Replace with the real photo in /public/artworks — until then, we show this note */}
         {artwork.image ? (
           <Image
