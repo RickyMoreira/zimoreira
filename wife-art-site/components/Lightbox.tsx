@@ -3,6 +3,7 @@
 import { useEffect, useCallback } from "react";
 import Image from "next/image";
 import type { Artwork } from "@/lib/artworks";
+import { getDimensions } from "@/lib/dimensions";
 
 export default function Lightbox({
   artworks,
@@ -16,6 +17,7 @@ export default function Lightbox({
   onNavigate: (newIndex: number) => void;
 }) {
   const artwork = artworks[index];
+  const { wide, tall } = getDimensions(artwork?.dimensions ?? "24x30");
 
   const goPrev = useCallback(() => {
     onNavigate((index - 1 + artworks.length) % artworks.length);
@@ -64,9 +66,9 @@ export default function Lightbox({
             <Image
               src={artwork.image}
               alt={artwork.title}
-              fill
-              sizes="90vw"
-              style={{ objectFit: "contain" }}
+              width={wide * 100}
+              height={tall * 100}
+              className="lightbox-image"
               priority
             />
           </div>

@@ -409,12 +409,25 @@ a {
   background: var(--paper);
   padding: 28px;
   box-shadow: 0 30px 60px -20px rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .lightbox-image-wrap {
-  position: relative;
-  width: 76vw;
-  height: 62vh;
-  max-width: 1040px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 76vw;
+  max-height: 62vh;
+}
+.lightbox-image {
+  display: block;
+  max-width: 76vw;
+  max-height: 62vh;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  box-shadow: 8px 14px 30px rgba(30, 27, 22, 0.45), 3px 5px 10px rgba(30, 27, 22, 0.3);
 }
 .lightbox-caption {
   text-align: center;
@@ -464,8 +477,12 @@ a {
     padding: 14px;
   }
   .lightbox-image-wrap {
-    width: 82vw;
-    height: 50vh;
+    max-width: 82vw;
+    max-height: 50vh;
+  }
+  .lightbox-image {
+    max-width: 82vw;
+    max-height: 50vh;
   }
   .lightbox-nav {
     font-size: 2.2rem;
