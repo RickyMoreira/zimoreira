@@ -270,13 +270,13 @@ a {
   max-width: 640px;
 }
 .landing-portrait {
-  width: 96px;
-  height: 96px;
+  width: 160px;
+  height: 160px;
   border-radius: 50%;
   background: var(--paper);
   border: 1px solid var(--line);
   margin-bottom: 24px;
-overflow: hidden;
+  overflow: hidden;
 }
 .landing-tagline {
   margin-top: 10px;
