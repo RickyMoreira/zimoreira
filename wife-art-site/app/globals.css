@@ -136,9 +136,6 @@ a {
   display: flex;
   flex-direction: column;
 }
-.obra.destaque {
-  grid-column: 1 / -1;
-}
 .obra-frame {
   background: var(--paper);
   border: 1px solid var(--line);
@@ -149,9 +146,6 @@ a {
   aspect-ratio: 4 / 5;
   overflow: hidden;
   transition: border-color 0.3s ease, box-shadow 0.3s ease;
-}
-.obra.destaque .obra-frame {
-  aspect-ratio: 16 / 9;
 }
 .obra-frame img {
   width: 100%;
