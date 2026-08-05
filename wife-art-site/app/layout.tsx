@@ -28,6 +28,7 @@ export const metadata: Metadata = {
   title: `${artist.name} — Paintings`,
   description: artist.bio,
 };
+
 export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
