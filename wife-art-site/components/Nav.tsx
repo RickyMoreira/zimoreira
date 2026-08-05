@@ -10,6 +10,7 @@ export default function Nav() {
         </Link>
         <ul className="nav-links">
           <li><Link href="/gallery">Gallery</Link></li>
+          <li><Link href="/showroom">Show Room</Link></li>
           <li><Link href="/about">About</Link></li>
           <li><Link href="/contact">Contact</Link></li>
         </ul>

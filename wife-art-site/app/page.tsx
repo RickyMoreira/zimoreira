@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Link from "next/link";
 import { artist } from "@/lib/artworks";
 
@@ -7,13 +6,12 @@ export default function Home() {
     <main>
       <section className="landing wrap">
         <div className="landing-portrait">
-          <Image
+          {/* Plain <img>, not next/image — avoids the Vercel image optimizer
+              choking on a large source photo. Fine for a single portrait. */}
+          <img
             src={artist.photo}
             alt={artist.name}
-            width={200}
-            height={200}
             style={{ width: "100%", height: "100%", objectFit: "cover" }}
-            priority
           />
         </div>
         <div className="hero-eyebrow">Abstract Art</div>
