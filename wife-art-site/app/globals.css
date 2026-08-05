@@ -148,6 +148,7 @@ a {
   justify-content: center;
   aspect-ratio: 4 / 5;
   overflow: hidden;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 .obra.destaque .obra-frame {
   aspect-ratio: 16 / 9;
@@ -157,8 +158,19 @@ a {
   height: 100%;
   object-fit: cover;
   display: block;
+  transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
 }
-.obra-frame.vazio {
+.obra:hover .obra-frame {
+  border-color: var(--accent);
+  box-shadow: 0 12px 28px -14px rgba(30, 27, 22, 0.35);
+}
+.obra:hover .obra-frame img {
+  transform: scale(1.06);
+}
+.obra:hover .placa-titulo {
+  color: var(--accent);
+  transition: color 0.3s ease;
+}.obra-frame.vazio {
   color: var(--stone);
   font-family: var(--font-mono), monospace;
   font-size: 0.72rem;
