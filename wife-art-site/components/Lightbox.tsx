@@ -59,15 +59,17 @@ export default function Lightbox({
       </button>
 
       <div className="lightbox-content" onClick={(e) => e.stopPropagation()}>
-        <div className="lightbox-image-wrap">
-          <Image
-            src={artwork.image}
-            alt={artwork.title}
-            fill
-            sizes="90vw"
-            style={{ objectFit: "contain" }}
-            priority
-          />
+        <div className="lightbox-frame">
+          <div className="lightbox-image-wrap">
+            <Image
+              src={artwork.image}
+              alt={artwork.title}
+              fill
+              sizes="90vw"
+              style={{ objectFit: "contain" }}
+              priority
+            />
+          </div>
         </div>
         <div className="lightbox-caption">
           <div className="placa-titulo">
