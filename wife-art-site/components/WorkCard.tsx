@@ -4,9 +4,12 @@ import type { Artwork } from "@/lib/artworks";
 function getAspectRatio(dimensions: string): string {
   const match = dimensions.match(/(\d+(?:\.\d+)?)\s*[×x]\s*(\d+(?:\.\d+)?)/);
   if (!match) return "4 / 5";
-  return `${match[1]} / ${match[2]}`;
+  const a = parseFloat(match[1]);
+  const b = parseFloat(match[2]);
+  const wide = Math.max(a, b);
+  const tall = Math.min(a, b);
+  return `${wide} / ${tall}`;
 }
-
 export default function WorkCard({ artwork }: { artwork: Artwork }) {
   const ratio = getAspectRatio(artwork.dimensions);
 
