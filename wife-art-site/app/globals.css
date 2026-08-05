@@ -270,8 +270,8 @@ a {
   max-width: 640px;
 }
 .landing-portrait {
-  width: 160px;
-  height: 160px;
+  width: 200px;
+  height: 200px;
   border-radius: 50%;
   background: var(--paper);
   border: 1px solid var(--line);
