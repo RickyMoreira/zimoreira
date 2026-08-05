@@ -122,19 +122,23 @@ a {
 }
 
 /* ---------- Galeria (grid + placas de museu) ---------- */
+/* ---------- Galeria (parede proporcional + placas de museu) ---------- */
 .galeria {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1px;
-  background: var(--line);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 48px 36px;
+  padding: 48px 0 72px;
   border-top: 1px solid var(--line);
   border-bottom: 1px solid var(--line);
 }
 .obra {
   background: var(--bg);
-  padding: 40px 28px 28px;
+  padding: 0;
   display: flex;
   flex-direction: column;
+  flex-shrink: 0;
 }
 .obra-frame {
   background: var(--paper);
@@ -206,15 +210,9 @@ a {
   color: var(--accent);
 }
 
-@media (max-width: 960px) {
-  .galeria {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
 @media (max-width: 620px) {
   .galeria {
-    grid-template-columns: 1fr;
+    gap: 32px 20px;
   }
 }
 /* ---------- Páginas internas (Sobre / Contato) ---------- */
