@@ -1,4 +1,4 @@
-import WorkCard from "@/components/WorkCard";
+import GalleryGrid from "@/components/GalleryGrid";
 import { artworks } from "@/lib/artworks";
 
 export default function Gallery() {
@@ -9,11 +9,7 @@ export default function Gallery() {
         <h1>Gallery</h1>
       </section>
 
-      <section className="galeria">
-        {artworks.map((artwork) => (
-          <WorkCard key={artwork.slug} artwork={artwork} />
-        ))}
-      </section>
+      <GalleryGrid artworks={artworks} />
     </main>
   );
 }

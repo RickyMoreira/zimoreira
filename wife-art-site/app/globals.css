@@ -121,7 +121,6 @@ a {
   line-height: 1.6;
 }
 
-/* ---------- Galeria (grid + placas de museu) ---------- */
 /* ---------- Galeria (parede proporcional + placas de museu) ---------- */
 .galeria {
   display: flex;
@@ -168,7 +167,8 @@ a {
 .obra:hover .placa-titulo {
   color: var(--accent);
   transition: color 0.3s ease;
-}.obra-frame.vazio {
+}
+.obra-frame.vazio {
   color: var(--stone);
   font-family: var(--font-mono), monospace;
   font-size: 0.72rem;
@@ -215,6 +215,7 @@ a {
     gap: 32px 20px;
   }
 }
+
 /* ---------- Páginas internas (Sobre / Contato) ---------- */
 .pagina {
   padding: 72px 0 100px;
@@ -279,8 +280,8 @@ a {
   max-width: 640px;
 }
 .landing-portrait {
-  width: 200px;
-  height: 200px;
+  width: 96px;
+  height: 96px;
   border-radius: 50%;
   background: var(--paper);
   border: 1px solid var(--line);
@@ -368,4 +369,94 @@ a {
 .social-list a:hover {
   border-bottom-color: var(--accent);
   color: var(--accent);
+}
+
+/* ---------- Obra frame as clickable button ---------- */
+.obra-frame-button {
+  border: 1px solid var(--line);
+  cursor: pointer;
+  font: inherit;
+  color: inherit;
+}
+.obra-frame-button:hover {
+  border-color: var(--accent);
+}
+
+/* ---------- Lightbox ---------- */
+.lightbox-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  background: rgba(20, 18, 14, 0.94);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+}
+.lightbox-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  max-width: 90vw;
+  max-height: 90vh;
+}
+.lightbox-image-wrap {
+  position: relative;
+  width: 82vw;
+  height: 68vh;
+  max-width: 1100px;
+}
+.lightbox-caption {
+  text-align: center;
+  color: var(--bg);
+}
+.lightbox-caption .placa-titulo {
+  color: var(--bg);
+  font-size: 1.1rem;
+}
+.lightbox-caption .placa-meta {
+  color: color-mix(in srgb, var(--bg) 70%, transparent);
+}
+.lightbox-close {
+  position: absolute;
+  top: 24px;
+  right: 28px;
+  background: none;
+  border: none;
+  color: var(--bg);
+  font-size: 1.6rem;
+  cursor: pointer;
+  line-height: 1;
+  padding: 8px;
+}
+.lightbox-close:hover {
+  color: var(--accent);
+}
+.lightbox-nav {
+  background: none;
+  border: none;
+  color: var(--bg);
+  font-size: 3rem;
+  cursor: pointer;
+  padding: 8px 18px;
+  line-height: 1;
+  flex-shrink: 0;
+}
+.lightbox-nav:hover {
+  color: var(--accent);
+}
+
+@media (max-width: 720px) {
+  .lightbox-overlay {
+    padding: 16px;
+  }
+  .lightbox-image-wrap {
+    width: 88vw;
+    height: 52vh;
+  }
+  .lightbox-nav {
+    font-size: 2.2rem;
+    padding: 6px 10px;
+  }
 }
