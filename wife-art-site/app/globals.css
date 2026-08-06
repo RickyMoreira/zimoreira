@@ -567,7 +567,7 @@ a {
 /* ---------- Mobile pass ---------- */
 @media (max-width: 640px) {
   .wrap {
-    padding: 0 26px;
+    padding: 0 32px;
   }
 
   /* Nav: smaller brand, tighter link spacing, wraps if needed */
