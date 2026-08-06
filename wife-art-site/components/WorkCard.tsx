@@ -24,18 +24,20 @@ export default function WorkCard({
         onClick={onClick}
         aria-label={`View ${artwork.title} full screen`}
       >
-        {/* Replace with the real photo in /public/artworks — until then, we show this note */}
-        {artwork.image ? (
-          <Image
-            src={artwork.image}
-            alt={artwork.title}
-            width={1200}
-            height={1500}
-            style={{ width: "100%", height: "100%", objectFit: "cover" }}
-          />
-        ) : (
-          <div className="obra-frame vazio">Photo pending — {artwork.slug}</div>
-        )}
+        <div className="obra-frame-mat">
+          {/* Replace with the real photo in /public/artworks — until then, we show this note */}
+          {artwork.image ? (
+            <Image
+              src={artwork.image}
+              alt={artwork.title}
+              width={1200}
+              height={1500}
+              style={{ width: "100%", height: "100%", objectFit: "cover" }}
+            />
+          ) : (
+            <div className="obra-frame vazio">Photo pending — {artwork.slug}</div>
+          )}
+        </div>
       </button>
       <div className="placa">
         <div className="placa-titulo">

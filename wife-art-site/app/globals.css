@@ -150,13 +150,19 @@ a {
 .obra-frame {
   background: var(--paper);
   border: 1px solid var(--line);
+  aspect-ratio: 4 / 5;
+  overflow: hidden;
+  display: block;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+.obra-frame-mat {
+  width: 100%;
+  height: 100%;
   padding: 18px;
   display: flex;
   align-items: center;
   justify-content: center;
-  aspect-ratio: 4 / 5;
-  overflow: hidden;
-  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  box-sizing: border-box;
 }
 .obra-frame img {
   width: 100%;
@@ -394,6 +400,8 @@ a {
   cursor: pointer;
   font: inherit;
   color: inherit;
+  padding: 0;
+  margin: 0;
 }
 .obra-frame-button:hover {
   border-color: var(--accent);
