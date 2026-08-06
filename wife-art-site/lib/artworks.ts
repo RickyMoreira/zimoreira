@@ -30,10 +30,8 @@ const MEDIUM = "Acrylic on canvas";
 
 export const artworks: Artwork[] = [
   { slug: "bare-layers", title: "Bare Layers", dimensions: "36 × 36 in", medium: MEDIUM, image: "/artworks/bare-layers.jpeg", featured: true, available: true },
-  { slug: "blue-fog", title: "Blue Fog", dimensions: "12 × 12 in", medium: MEDIUM, image: "/artworks/blue-fog.jpeg", available: true },
-  { slug: "bubble-of-light", title: "Bubble of Light", dimensions: "30 × 30 in", medium: MEDIUM, image: "/artworks/bubble-of-light.jpeg", available: true },
-  { slug: "blue-fog-2", title: "Blue Fog 2", dimensions: "12 × 12 in", medium: MEDIUM, image: "/artworks/blue-fog-2.jpeg", available: true },
-  { slug: "chicago", title: "Chicago", dimensions: "24 × 30 in", medium: MEDIUM, image: "/artworks/chicago.jpeg", available: true },
+   { slug: "bubble-of-light", title: "Bubble of Light", dimensions: "30 × 30 in", medium: MEDIUM, image: "/artworks/bubble-of-light.jpeg", available: true },
+   { slug: "chicago", title: "Chicago", dimensions: "24 × 30 in", medium: MEDIUM, image: "/artworks/chicago.jpeg", available: true },
   { slug: "defining-lines", title: "Defining Lines", dimensions: "24 × 30 in", medium: MEDIUM, image: "/artworks/defining-lines.jpeg", available: true },
   { slug: "entrance-door", title: "Entrance Door", dimensions: "24 × 36 in", medium: MEDIUM, image: "/artworks/entrance-door.jpeg", available: true },
   { slug: "fewest-words", title: "Fewest Words", dimensions: "24 × 24 in", medium: MEDIUM, image: "/artworks/fewest-words.jpeg", available: true },
@@ -66,4 +64,6 @@ export const artworks: Artwork[] = [
   { slug: "underrated-anyway", title: "Underrated Anyway", dimensions: "24 × 24 in", medium: MEDIUM, image: "/artworks/underrated-anyway.jpeg", available: true },
   { slug: "unexpected", title: "Unexpected", dimensions: "24 × 24 in", medium: MEDIUM, image: "/artworks/unexpected.jpeg", available: true },
   { slug: "youre-just-on-time", title: "You're Just on Time", dimensions: "24 × 30 in", medium: MEDIUM, image: "/artworks/youre-just-on-time.jpeg", available: true },
+ { slug: "blue-fog-2", title: "Blue Fog 2", dimensions: "12 × 12 in", medium: MEDIUM, image: "/artworks/blue-fog-2.jpeg", available: true },
+ { slug: "blue-fog", title: "Blue Fog", dimensions: "12 × 12 in", medium: MEDIUM, image: "/artworks/blue-fog.jpeg", available: true },
 ];
