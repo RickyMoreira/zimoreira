@@ -13,7 +13,7 @@ export default function WorkCard({
   const ratio = `${wide} / ${tall}`;
   // Card width scales with the painting's real width in inches, so a 12" piece
   // renders visibly smaller than a 36" piece. Shrinks smoothly on small screens.
-  const cardWidth = `clamp(110px, ${(wide * 1.1).toFixed(1)}vw, ${wide * 9}px)`;
+  const cardWidth = `clamp(90px, ${(wide * 1.1).toFixed(1)}vw, ${wide * 9}px)`;
 
   return (
     <article className="obra" style={{ width: cardWidth }}>
