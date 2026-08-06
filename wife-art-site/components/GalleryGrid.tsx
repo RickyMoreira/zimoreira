@@ -10,7 +10,7 @@ export default function GalleryGrid({ artworks }: { artworks: Artwork[] }) {
 
   return (
     <>
-      <section className="galeria">
+      <section className="galeria wrap">
         {artworks.map((artwork, i) => (
           <WorkCard key={artwork.slug} artwork={artwork} onClick={() => setOpenIndex(i)} />
         ))}
