@@ -73,7 +73,8 @@ a {
   display: flex;
   align-items: baseline;
   justify-content: space-between;
-  padding: 20px 0;
+  padding-top: 20px;
+  padding-bottom: 20px;
 }
 .nav-brand {
   font-family: var(--font-display), serif;
@@ -581,7 +582,8 @@ a {
   .nav-inner {
     flex-wrap: wrap;
     gap: 10px 0;
-    padding: 16px 0;
+    padding-top: 16px;
+    padding-bottom: 16px;
   }
   .nav-brand {
     font-size: 1.02rem;
