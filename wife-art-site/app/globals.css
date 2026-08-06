@@ -18,8 +18,8 @@ html {
   scroll-behavior: smooth;
   overflow-x: hidden;
   width: 100%;
+  background: var(--bg);
 }
-
 body {
   margin: 0;
   background: var(--bg);
